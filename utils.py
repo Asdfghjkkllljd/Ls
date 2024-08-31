@@ -85,7 +85,7 @@ async def win_notify(sum: float, msg: str, photo: str):
     hash_input = f"{sum}{msg}".encode('utf-8')
     hash_object = hashlib.sha256(hash_input)
     hash_hex = hash_object.hexdigest()
-    check = await crypto.create_check(asset='USDT', amount=sum, pin_to_user_id=msg.from_user.id)
+    check = await cryptopay.create_check(asset='USDT', amount=sum, pin_to_user_id=msg.from_user.id)
     return await bot.send_photo(
         config.CHANNEL_ID,
         photo,
