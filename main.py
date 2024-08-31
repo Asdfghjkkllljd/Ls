@@ -693,7 +693,8 @@ async def access_bid(call: CallbackQuery):
     await utils.win_notify(
         float(round(game.bid * 2., 2)),
         f"Выпал {config.knb_smiles.get(smile)}.",
-        "https://i.imgur.com/2WHXfkP.png"
+        "https://i.imgur.com/2WHXfkP.png",
+        call
     )
     game.delete().execute()
 
