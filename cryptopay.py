@@ -40,3 +40,22 @@ class CryptoBotPay():
         invoice = await self.pay.create_invoice(amount, "USDT")
         await self.pay.close()
         return invoice
+
+    async def pay_by_check(self, check_id: str, amount: float):
+        """
+        Выплата чеком.
+
+        Args:
+            check_id (str): ID чека.
+            amount (float): Сумма выплаты.
+
+        Returns:
+            dict: Информация о транзакции.
+        """
+        try:
+            payment = await self.pay.pay_check(check_id, amount, "USDT")
+            await self.pay.close()
+            return payment
+        except Exception as e:
+            print(f"Ошибка при выплате чеком: {e}")
+            return None
