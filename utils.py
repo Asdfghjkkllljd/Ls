@@ -9,8 +9,6 @@ import aiosqlite
 import random
 import hashlib
 from datetime import datetime
-from games import some_game_function 
-from main import some_main_function 
 
 m = lambda num: decimal.Decimal(f"{num}")
 
