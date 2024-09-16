@@ -2,6 +2,8 @@ import re
 from decimal import Decimal
 import config
 import decimal
+import games.py
+import main.py
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from loader import bot, cryptopay
 import aiocryptopay
@@ -173,7 +175,8 @@ def parse_data(msg: Message) -> dict[str, int | str]:
             "comment": comment
         }
     except (AttributeError, IndexError, ValueError):
-        return {} async def notify_bid(data: dict, game)
+        return {} 
+async def notify_bid(data: dict, game)
     kb = InlineKeyboardMarkup(row_width=1)
     kb.add(
         InlineKeyboardButton(
