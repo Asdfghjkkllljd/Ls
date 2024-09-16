@@ -2,8 +2,6 @@ import re
 from decimal import Decimal
 import config
 import decimal
-import games.py
-import main.py
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton, Message
 from loader import bot, cryptopay
 import aiocryptopay
@@ -11,6 +9,8 @@ import aiosqlite
 import random
 import hashlib
 from datetime import datetime
+from games import some_game_function 
+from main import some_main_function 
 
 m = lambda num: decimal.Decimal(f"{num}")
 
@@ -176,7 +176,7 @@ def parse_data(msg: Message) -> dict[str, int | str]:
         }
     except (AttributeError, IndexError, ValueError):
         return {} 
-async def notify_bid(data: dict, game)
+async def notify_bid(data: dict, game):
     kb = InlineKeyboardMarkup(row_width=1)
     kb.add(
         InlineKeyboardButton(
